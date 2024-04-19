@@ -9,15 +9,15 @@ Therefore, you create a Kubernetes job that creates a client certificate and key
 ```bash
 # Install Cockroach
 helm repo add cockroachdb https://charts.cockroachdb.com/
-helm install db cockroachdb/cockroachdb --version 11.2.1 --values https://raw.githubusercontent.com/kleberbaum/zitadel-charts/main/cockroach-values.yaml
+helm install db cockroachdb/cockroachdb --version 11.2.1 --values ./cockroach-values.yaml
 
 # Generate a TLS certificate for the zitadel DB user
-kubectl apply -f https://raw.githubusercontent.com/kleberbaum/zitadel-charts/main/zitadel-cert-job.yaml
+kubectl apply -f ./zitadel-cert-job.yaml
 kubectl wait --for=condition=complete job/create-zitadel-cert
 
 # Install ZITADEL
 helm repo add zitadel https://charts.zitadel.com
-helm install zitadel zitadel/zitadel --values https://raw.githubusercontent.com/kleberbaum/zitadel-charts/main/zitadel-values.yaml
+helm install zitadel zitadel/zitadel --values ./zitadel-values.yaml
 ```
 
 When ZITADEL is ready, you can access the GUI via port-forwarding:
