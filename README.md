@@ -28,5 +28,5 @@ kubectl port-forward svc/zitadel 8080
 
 Now, open http://127.0.0.1.sslip.io:8080 in your browser and log in with the following credentials:
 
-**Username**: zitadel-admin@accounts.photonq.org
+**Username**: zitadel-admin@zitadel.accounts.photonq.org
 **Password**: Password1!
