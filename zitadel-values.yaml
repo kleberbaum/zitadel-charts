@@ -1,6 +1,7 @@
 zitadel:
   masterkey: x123456789012345678901234567891y
   configmapConfig:
+    ExternalPort: 443
     ExternalSecure: true
     ExternalDomain: accounts.photonq.org
     TLS:
